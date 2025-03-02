@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,7 +22,7 @@ public class PizzaController {
     @GetMapping("/")
     public String index(Model model){
         List<Pizza> pizzas = pizzaRepository.findAll();
-        model.addAttribute("pizzas", pizzas);
+        model.addAttribute("pizze", pizzas != null ? pizzas : new ArrayList<>()); 
         return "index";
     }
 }
