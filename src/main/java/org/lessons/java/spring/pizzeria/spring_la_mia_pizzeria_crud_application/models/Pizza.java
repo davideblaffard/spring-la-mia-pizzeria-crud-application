@@ -15,6 +15,8 @@ public class Pizza {
     private String fotoUrl;
     private double prezzo;
 
+    public Pizza(){}
+    
     public Pizza(String nome, String descrizione, String fotoUrl, double prezzo){
         this.nome = nome;
         this.descrizione = descrizione;
