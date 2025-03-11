@@ -26,14 +26,16 @@
 
             <!-- Tabella con le pizze -->
             <table th:if="${not pizze.isEmpty()}" class="table table-striped mt-3">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Descrizione</th>
-                        <th>Prezzo (€)</th>
-                        <th>Foto</th>
+                <!-- thead -->
+                    <tr th:each="pizza :${pizzas}">
+                        <td th:text="${pizza.nome}"
+                        <td th:text="${pizza.descrizione}"
+                        <td th:text="${pizza.prezzo}"
+                        <td>
+                            <a th:ref="@{/pizzas/(id}{id=${pizza.id})}" class="btn btn-primary"> Show </a>
+                        </td>
                     </tr>
-                </thead>
+                <!-- </thead> -->
                 <tbody>
                     <tr th:each="pizza : ${pizze}">
                         <td th:text="${pizza.nome}"></td>
